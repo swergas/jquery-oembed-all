@@ -396,7 +396,7 @@
     };
 
     $.fn.oembed.getGenericCode = function(url, oembedData) {
-        var title = (oembedData.title !== null) ? oembedData.title : url,
+        var title = ((oembedData.title) && (oembedData.title !== null)) ? oembedData.title : url,
             code = '<a href="' + url + '">' + title + '</a>';
         if (oembedData.html) code += "<div>" + oembedData.html + "</div>";
         return code;
