@@ -234,10 +234,10 @@
           var flashvars = embedProvider.embedtag.flashvars || '';
           var tag = embedProvider.embedtag.tag || 'embed';
           var width = embedProvider.embedtag.width || 'auto';
-          var nocache = embedProvider.embedtag.nocache || 0;
+          var nocache = embedProvider.nocache || 0;
           var height = embedProvider.embedtag.height || 'auto';
           var src =externalUrl.replace(embedProvider.templateRegex,embedProvider.apiendpoint);
-          if(!embedProvider.nocache) src += '&jqoemcache='+rand(5);
+          if(!nocache) src += '&jqoemcache='+rand(5);
           if (embedProvider.apikey) src = src.replace('_APIKEY_', settings.apikeys[embedProvider.name]);
           
            
@@ -526,12 +526,12 @@
     new $.fn.oembed.OEmbedProvider("vzaar", "video", ["vzaar\\.com/videos/.+","vzaar.tv/.+"],"http://view.vzaar.com/$1/player?",
       {templateRegex:/.*\/(\d+).*/, embedtag : {tag:'iframe',width:576,height: 324 }}),
     new $.fn.oembed.OEmbedProvider("snotr", "video", ["snotr\\.com/video/.+"],"http://www.snotr.com/embed/$1",
-      {templateRegex:/.*\/(\d+).*/, embedtag : {tag:'iframe',width:400,height: 330, nocache:1 }}), 
+      {templateRegex:/.*\/(\d+).*/, embedtag : {tag:'iframe',width:400,height: 330}, nocache:1 }),
       
     new $.fn.oembed.OEmbedProvider("youku", "video", ["v.youku.com/v_show/id_.+"],"http://player.youku.com/player.php/sid/$1/v.swf",
-      {templateRegex:/.*id_(.+)\.html.*/, embedtag : {width:480,height:400, nocache:1 }}), 
+      {templateRegex:/.*id_(.+)\.html.*/, embedtag : {width:480,height:400}, nocache:1 }),
     new $.fn.oembed.OEmbedProvider("tudou", "video", ["tudou.com/programs/view/.+\/"],"http://www.tudou.com/v/$1/v.swf",
-      {templateRegex:/.*view\/(.+)\//, embedtag : {width:480,height:400, nocache:1 }}),
+      {templateRegex:/.*view\/(.+)\//, embedtag : {width:480,height:400}, nocache:1 }),
 
     new $.fn.oembed.OEmbedProvider("embedr", "video", ["embedr\\.com/playlist/.+"],"http://embedr.com/swf/slider/$1/425/520/default/false/std?",
       {templateRegex:/.*playlist\/([^\/]+).*/, embedtag : {width:425,height: 520}}), 
@@ -700,7 +700,7 @@
       }),
       
     new $.fn.oembed.OEmbedProvider("timetoast", "rich", ["timetoast.com/timelines/[0-9]+"],"http://www.timetoast.com/flash/TimelineViewer.swf?passedTimelines=$1",
-      {templateRegex:/.*timelines\/([0-9]*)/ ,embedtag : { width:550,height: 400,nocache:1}
+      {templateRegex:/.*timelines\/([0-9]*)/ ,embedtag : { width:550,height: 400} ,nocache:1
       }),
     new $.fn.oembed.OEmbedProvider("pastebin", "rich", ["pastebin\\.com/[\\S]{8}"],"http://pastebin.com/embed_iframe.php?i=$1",
       {templateRegex:/.*\/(\S{8}).*/ ,embedtag : {tag: 'iframe', width:'100%',height: 'auto'}
