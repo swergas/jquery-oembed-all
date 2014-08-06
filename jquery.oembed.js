@@ -555,7 +555,7 @@
     new $.fn.oembed.OEmbedProvider("VHX", "video", ["vhx.tv/.+"], "http://vhx.tv/services/oembed.json"),
     new $.fn.oembed.OEmbedProvider("bambuser", "video", ["bambuser.com/.+"], "http://api.bambuser.com/oembed/iframe.json"),
     new $.fn.oembed.OEmbedProvider("justin.tv", "video", ["justin.tv/.+"], 'http://api.justin.tv/api/embed/from_url.json',{useYQL:'json'}),
-    
+    new $.fn.oembed.OEmbedProvider("vine", "video", ["vine.co/v/.*/embed/.*"],"$1",{templateRegex:/(.*)/ ,embedtag : {tag: 'iframe', width:'600',height: '600'}, nocache:1 }),
     
     //Audio 
     new $.fn.oembed.OEmbedProvider("official.fm", "rich", ["official.fm/.+"], 'http://official.fm/services/oembed',{useYQL:'json'}),
