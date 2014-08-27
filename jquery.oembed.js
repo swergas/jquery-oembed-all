@@ -561,7 +561,7 @@
         new $.fn.oembed.OEmbedProvider("justin.tv", "video", ["justin.tv/.+"], 'http://api.justin.tv/api/embed/from_url.json',{useYQL:'json'}),
         new $.fn.oembed.OEmbedProvider("vine", "video", ["vine.co/v/.*"],null,
             {
-                templateRegex:/https?:w*\/\/vine\.co\/v\/([a-zA-Z0-9]*).*/,
+                templateRegex:/https?:\/\/w?w?w?.?vine\.co\/v\/([a-zA-Z0-9]*).*/,
                 template: '<iframe src="https://vine.co/v/$1/embed/postcard" width="600" height="600" allowfullscreen="true" allowscriptaccess="always" scrolling="no" frameborder="0"></iframe>' +
                     '<script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',
                 nocache:1
@@ -814,8 +814,12 @@
             }),
         new $.fn.oembed.OEmbedProvider("coveritlive", "rich", ["coveritlive.com/"], null, {
                 templateRegex:/(.*)/,
-                template: '<iframe src="$1" allowtransparency="true" scrolling="no" width="615px" frameborder="0" height="625px"></iframe>'
-            }),
+                template: '<iframe src="$1" allowtransparency="true" scrolling="no" width="615px" frameborder="0" height="625px"></iframe>'}),
+        new $.fn.oembed.OEmbedProvider("polldaddy", "rich", ["polldaddy.com/"], null, {
+          templateRegex:/(?:https?:\/\/w?w?w?.?polldaddy.com\/poll\/)([0-9]*)\//,
+          template: '<script async type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/$1.js"></script>',
+          nocache:1
+        }),
 
 
         //Use Open Graph Where applicable
