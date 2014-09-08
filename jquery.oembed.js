@@ -190,9 +190,12 @@
             var result;
             if(embedProvider.yql.xpath && embedProvider.yql.xpath=='//meta|//title|//link'){
                 var meta={};
-				if (data.query.results == null) {
-				 data.query.results = {"meta": []};
-				}
+				if (data.query == null) {
+                  data.query = {};
+                }
+                if (data.query.results == null) {
+                  data.query.results = {"meta": []};
+                }
                 for(var i=0, l=data.query.results.meta.length; i<l; i++){
                   var name = data.query.results.meta[i].name||data.query.results.meta[i].property||null;
                   if(name==null)continue;
