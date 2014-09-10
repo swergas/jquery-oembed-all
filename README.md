@@ -330,6 +330,9 @@ Current 3rd party sources include:
 * TwitLonger
 * http://robohash.org/
 * http://infogr.am/british-council/burma/
+* CoveritLive
+* Polldaddy
+* Vine
 
 
 Plus a lot more :) Feel free to submit
