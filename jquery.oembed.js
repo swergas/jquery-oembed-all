@@ -83,8 +83,8 @@
 							}
 						  },
 						  error: function() {
-                              				settings.onError.call(container, resourceURL)
-                            			  }
+              				settings.onError.call(container, resourceURL)
+            			  }
 						}, settings.ajaxOptions || {});
 						
 						$.ajax(ajaxopts);
@@ -240,7 +240,6 @@
           var flashvars = embedProvider.embedtag.flashvars || '';
           var tag = embedProvider.embedtag.tag || 'embed';
           var width = embedProvider.embedtag.width || 'auto';
-          var nocache = embedProvider.embedtag.nocache || 0;
           var height = embedProvider.embedtag.height || 'auto';
           var src =externalUrl.replace(embedProvider.templateRegex,embedProvider.apiendpoint);
           if(!embedProvider.nocache) src += '&jqoemcache='+rand(5);
@@ -532,12 +531,12 @@
     new $.fn.oembed.OEmbedProvider("vzaar", "video", ["vzaar\\.com/videos/.+","vzaar.tv/.+"],"http://view.vzaar.com/$1/player?",
       {templateRegex:/.*\/(\d+).*/, embedtag : {tag:'iframe',width:576,height: 324 }}),
     new $.fn.oembed.OEmbedProvider("snotr", "video", ["snotr\\.com/video/.+"],"http://www.snotr.com/embed/$1",
-      {templateRegex:/.*\/(\d+).*/, embedtag : {tag:'iframe',width:400,height: 330, nocache:1 }}), 
+            {templateRegex:/.*\/(\d+).*/, embedtag : {tag:'iframe',width:400,height: 330}, nocache:1 }),
       
     new $.fn.oembed.OEmbedProvider("youku", "video", ["v.youku.com/v_show/id_.+"],"http://player.youku.com/player.php/sid/$1/v.swf",
-      {templateRegex:/.*id_(.+)\.html.*/, embedtag : {width:480,height:400, nocache:1 }}), 
+            {templateRegex:/.*id_(.+)\.html.*/, embedtag : {width:480,height:400}, nocache:1 }),
     new $.fn.oembed.OEmbedProvider("tudou", "video", ["tudou.com/programs/view/.+\/"],"http://www.tudou.com/v/$1/v.swf",
-      {templateRegex:/.*view\/(.+)\//, embedtag : {width:480,height:400, nocache:1 }}),
+            {templateRegex:/.*view\/(.+)\//, embedtag : {width:480,height:400}, nocache:1 }),
 
     new $.fn.oembed.OEmbedProvider("embedr", "video", ["embedr\\.com/playlist/.+"],"http://embedr.com/swf/slider/$1/425/520/default/false/std?",
       {templateRegex:/.*playlist\/([^\/]+).*/, embedtag : {width:425,height: 520}}), 
@@ -561,7 +560,13 @@
     new $.fn.oembed.OEmbedProvider("VHX", "video", ["vhx.tv/.+"], "http://vhx.tv/services/oembed.json"),
     new $.fn.oembed.OEmbedProvider("bambuser", "video", ["bambuser.com/.+"], "http://api.bambuser.com/oembed/iframe.json"),
     new $.fn.oembed.OEmbedProvider("justin.tv", "video", ["justin.tv/.+"], 'http://api.justin.tv/api/embed/from_url.json',{useYQL:'json'}),
-    
+        new $.fn.oembed.OEmbedProvider("vine", "video", ["vine.co/v/.*"],null,
+            {
+                templateRegex:/https?:\/\/w?w?w?.?vine\.co\/v\/([a-zA-Z0-9]*).*/,
+                template: '<iframe src="https://vine.co/v/$1/embed/postcard" width="600" height="600" allowfullscreen="true" allowscriptaccess="always" scrolling="no" frameborder="0"></iframe>' +
+                    '<script async src="//platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>',
+                nocache:1
+            }),
     
     //Audio 
     new $.fn.oembed.OEmbedProvider("official.fm", "rich", ["official.fm/.+"], 'http://official.fm/services/oembed',{useYQL:'json'}),
@@ -609,8 +614,7 @@
       {templateRegex:/.*circuit\/([^\/]+).*/ , embedtag : {tag:'img'},nocache:1}),
     new $.fn.oembed.OEmbedProvider("23hq", "photo", ["23hq.com/[-.\\w@]+/photo/.+"],"http://www.23hq.com/23/oembed",{useYQL:"json"}),
     new $.fn.oembed.OEmbedProvider("img.ly", "photo", ["img\\.ly/.+"],"//img.ly/show/thumb/$1",
-      {templateRegex:/.*ly\/([^\/]+).*/ , embedtag : {tag:'img'},nocache:1
-      }), 
+      {templateRegex:/.*ly\/([^\/]+).*/ , embedtag : {tag:'img'},nocache:1}),
     new $.fn.oembed.OEmbedProvider("twitgoo.com", "photo", ["twitgoo\\.com/.+"],"http://twitgoo.com/show/thumb/$1",
       {templateRegex:/.*com\/([^\/]+).*/ , embedtag : {tag:'img'},nocache:1}), 
     new $.fn.oembed.OEmbedProvider("imgur.com", "photo", ["imgur\\.com/gallery/.+"],"http://imgur.com/$1l.jpg",
@@ -706,7 +710,7 @@
       }),
       
     new $.fn.oembed.OEmbedProvider("timetoast", "rich", ["timetoast.com/timelines/[0-9]+"],"http://www.timetoast.com/flash/TimelineViewer.swf?passedTimelines=$1",
-      {templateRegex:/.*timelines\/([0-9]*)/ ,embedtag : { width:550,height: 400,nocache:1}
+            {templateRegex:/.*timelines\/([0-9]*)/ ,embedtag : { width:550,height: 400},nocache:1
       }),
     new $.fn.oembed.OEmbedProvider("pastebin", "rich", ["pastebin\\.com/[\\S]{8}"],"http://pastebin.com/embed_iframe.php?i=$1",
       {templateRegex:/.*\/(\S{8}).*/ ,embedtag : {tag: 'iframe', width:'100%',height: 'auto'}
@@ -737,7 +741,7 @@
           if(data.picture) out += '<a href="'+data.link+'"><img src="'+data.picture+'"></a>';
           else out += '<img src="https://graph.facebook.com/'+data.id+'/picture">';
           if(data.from) out += '<a href="'+data.link+'">'+data.name+'</a>';
-          if(data.founded) out += 'Founded: <strong>'+data.founded+'</strong><br>'
+                    if(data.founded) out += 'Founded: <strong>'+data.founded+'</strong><br>';
           if(data.category) out += 'Category: <strong>'+data.category+'</strong><br>';
           if(data.website) out += 'Website: <strong><a href="'+data.website+'">'+data.website+'</a></strong><br>';
           if(data.gender) out += 'Gender: <strong>'+data.gender+'</strong><br>';
@@ -804,10 +808,18 @@
       {yql:{xpath:'//pre/font', from: 'htmlstring'
           , datareturn:function(results){
               if(!results.result) return false;
-              return '<pre style="background-color:000;">'+results.result+'</div>';
+                    return '<pre style="background-color:#000;">'+results.result+'</div>';
               }
           }
       }),
+        new $.fn.oembed.OEmbedProvider("coveritlive", "rich", ["coveritlive.com/"], null, {
+            templateRegex:/(.*)/,
+            template: '<iframe src="$1" allowtransparency="true" scrolling="no" width="615px" frameborder="0" height="625px"></iframe>'}),
+        new $.fn.oembed.OEmbedProvider("polldaddy", "rich", ["polldaddy.com/"], null, {
+            templateRegex:/(?:https?:\/\/w?w?w?.?polldaddy.com\/poll\/)([0-9]*)\//,
+            template: '<script async type="text/javascript" charset="utf-8" src="http://static.polldaddy.com/p/$1.js"></script>',
+            nocache:1
+        }),
     
    
     

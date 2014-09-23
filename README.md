@@ -133,6 +133,7 @@ Current 3rd party sources include:
   http://v.youku.com/v_show/id_XMzgxNzY3NTU2.html
 * wistia - Oembed
   http://home.wistia.com/m/NI3bSQ
+* Vine - template regex
 
   
   
@@ -312,6 +313,8 @@ Current 3rd party sources include:
   https://gmep.org/media/11041
 * sketchfab - oembed YQL
   https://sketchfab.com/show/9lVs96AuFUAjKjwvsMG0Uf7Yy7b
+  * polldaddy - template regex
+  * coveritlive - template regex
   
 ---
 
