@@ -15,7 +15,7 @@ This project tries to use embedding techniques in the following order of prefere
 * oEmbed - JSONP available - e.g.  flickr, meetup etc
 * embedding (IFRAME/Object) based on URL information - e.g.  youtube
 * oEmbed - JSONP not Available - use YQL to correct - e.g. Ustream, viddler
-* OGP over YQL - used as a fall back.
+* OGP over YQL - used as a fall back. 
 * YQL Screenscape to get embedding details
 * YQL Screenscrape - e.g. pastie
 * JSONP Api lookups Source - With HTML and CSS built in this project - e.g. github, Myspace, Facebook
@@ -37,9 +37,6 @@ Shortened Urls
 This project now handles shortened url's using the JSONP service from http://longurl.org. e.g. http://bit.ly/oP77mm will first lengthen the URL 
 to http://tinychat.com/omginternetparty and then embed as normal. This is experimental - so let me know of problems!
 
-
-
-
 to use...
 ````
 <a href="https://github.com/starfishmod/jquery-oembed-all" class="oembed">https://github.com/starfishmod/jquery-oembed-all</a>
@@ -57,6 +54,20 @@ $(".oembed").oembed(null,{
 });
 ````
 
+
+Fallback to Open Graph 
+------------
+If no providers are found, the fallback (opengraph) provider will scrap the intended website using YQL
+to try to embed information using the OG protocol. 
+
+The fallback can be disabled using {fallback:false} setting.
+
+````
+$(".oembed").oembed(null,{
+        fallback : false
+    }
+});
+````
 
 Current 3rd party sources include:
 ---------------------------------
@@ -313,8 +324,8 @@ Current 3rd party sources include:
   https://gmep.org/media/11041
 * sketchfab - oembed YQL
   https://sketchfab.com/show/9lVs96AuFUAjKjwvsMG0Uf7Yy7b
-  * polldaddy - template regex
-  * coveritlive - template regex
+* polldaddy - template regex
+* coveritlive - template regex
   
 ---
 
