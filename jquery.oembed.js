@@ -94,15 +94,11 @@
                 provider = $.fn.oembed.getOEmbedProvider(resourceURL);
 
                 if (provider !== null) {
-                    console.log('found');
-                    console.log(provider);
-                    console.log(resourceURL);
                     provider.params = getNormalizedParams(settings[provider.name]) || {};
                     provider.maxWidth = settings.maxWidth;
                     provider.maxHeight = settings.maxHeight;
                     embedCode(container, resourceURL, provider);
                 } else {
-                    console.log('not found');
                     settings.onProviderNotFound.call(container, resourceURL);
                 }
             }
@@ -122,11 +118,7 @@
 		includeHandle: true,
         embedMethod: 'auto',
         // "auto", "append", "fill"		
-        onProviderNotFound: function( ) {
-            var len = arguments.length;
-            console.log('args');
-            console.log(len);
-        },
+        onProviderNotFound: function( ) {},
         beforeEmbed: function() {},
         afterEmbed: function() {},
         onEmbed: false,
