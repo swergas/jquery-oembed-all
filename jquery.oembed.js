@@ -40,7 +40,6 @@
         if ($('#jqoembeddata').length === 0) $('<span id="jqoembeddata"></span>').appendTo('body');
 
         return this.each(function() {
-
             var container = $(this),
                 resourceURL =  (url && (!url.indexOf('http://') || !url.indexOf('https://'))) ? url : container.attr("href"),
                 provider;
@@ -95,11 +94,15 @@
                 provider = $.fn.oembed.getOEmbedProvider(resourceURL);
 
                 if (provider !== null) {
+                    console.log('found');
+                    console.log(provider);
+                    console.log(resourceURL);
                     provider.params = getNormalizedParams(settings[provider.name]) || {};
                     provider.maxWidth = settings.maxWidth;
                     provider.maxHeight = settings.maxHeight;
                     embedCode(container, resourceURL, provider);
                 } else {
+                    console.log('not found');
                     settings.onProviderNotFound.call(container, resourceURL);
                 }
             }
@@ -119,7 +122,11 @@
 		includeHandle: true,
         embedMethod: 'auto',
         // "auto", "append", "fill"		
-        onProviderNotFound: function() {},
+        onProviderNotFound: function( ) {
+            var len = arguments.length;
+            console.log('args');
+            console.log(len);
+        },
         beforeEmbed: function() {},
         afterEmbed: function() {},
         onEmbed: false,
@@ -823,38 +830,38 @@
     
    
     
-    //Use Open Graph Where applicable
-    new $.fn.oembed.OEmbedProvider("opengraph", "rich", [".*"], null,
-    {yql:{xpath:"//meta|//title|//link", from:'html'
-        , datareturn:function(results){
-            if(!results['og:title'] && results['title'] &&results['description'])results['og:title']=results['title'];
-            if(!results['og:title'] && !results['title'])return false;
-            var code = $('<p/>');
-            if(results['og:video']) {
-              var embed = $('<embed src="'+results['og:video']+'"/>');
-              embed
-                  .attr('type',results['og:video:type'] || "application/x-shockwave-flash")
-                  .css('max-height', settings.maxHeight || 'auto' )
-                  .css('max-width', settings.maxWidth || 'auto' );
-              if(results['og:video:width']) embed.attr('width',results['og:video:width']);
-              if(results['og:video:height']) embed.attr('height',results['og:video:height']);
-              code.append(embed);
-            }else if(results['og:image']) {
-              var img = $('<img src="'+results['og:image']+'">');
-              img.css('max-height', settings.maxHeight || 'auto' ).css('max-width', settings.maxWidth || 'auto' );
-              if(results['og:image:width']) img.attr('width',results['og:image:width']);
-              if(results['og:image:height']) img.attr('height',results['og:image:height']);
-              code.append(img);
-            }
-            if(results['og:title']) code.append('<b>'+results['og:title']+'</b><br/>');
-            if(results['og:description'])
-             code.append(results['og:description']+'<br/>');
-            else if(results['description'])
-              code.append(results['description']+'<br/>');
-            return code;
-          }
-        }
-    })
+//    //Use Open Graph Where applicable
+//    new $.fn.oembed.OEmbedProvider("opengraph", "rich", [".*"], null,
+//    {yql:{xpath:"//meta|//title|//link", from:'html'
+//        , datareturn:function(results){
+//            if(!results['og:title'] && results['title'] &&results['description'])results['og:title']=results['title'];
+//            if(!results['og:title'] && !results['title'])return false;
+//            var code = $('<p/>');
+//            if(results['og:video']) {
+//              var embed = $('<embed src="'+results['og:video']+'"/>');
+//              embed
+//                  .attr('type',results['og:video:type'] || "application/x-shockwave-flash")
+//                  .css('max-height', settings.maxHeight || 'auto' )
+//                  .css('max-width', settings.maxWidth || 'auto' );
+//              if(results['og:video:width']) embed.attr('width',results['og:video:width']);
+//              if(results['og:video:height']) embed.attr('height',results['og:video:height']);
+//              code.append(embed);
+//            }else if(results['og:image']) {
+//              var img = $('<img src="'+results['og:image']+'">');
+//              img.css('max-height', settings.maxHeight || 'auto' ).css('max-width', settings.maxWidth || 'auto' );
+//              if(results['og:image:width']) img.attr('width',results['og:image:width']);
+//              if(results['og:image:height']) img.attr('height',results['og:image:height']);
+//              code.append(img);
+//            }
+//            if(results['og:title']) code.append('<b>'+results['og:title']+'</b><br/>');
+//            if(results['og:description'])
+//             code.append(results['og:description']+'<br/>');
+//            else if(results['description'])
+//              code.append(results['description']+'<br/>');
+//            return code;
+//          }
+//        }
+//    })
 
     ];
 })(jQuery);
