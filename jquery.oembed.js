@@ -13,127 +13,125 @@
 
         settings = $.extend(true, $.fn.oembed.defaults, options);
         var shortURLList = ["0rz.tw","1link.in","1url.com","2.gp","2big.at","2tu.us","3.ly","307.to","4ms.me","4sq.com","4url.cc","6url.com","7.ly","a.gg","a.nf","aa.cx","abcurl.net",
-							"ad.vu","adf.ly","adjix.com","afx.cc","all.fuseurl.com","alturl.com","amzn.to","ar.gy","arst.ch","atu.ca","azc.cc","b23.ru","b2l.me","bacn.me","bcool.bz","binged.it",
-							"bit.ly","bizj.us","bloat.me","bravo.ly","bsa.ly","budurl.com","canurl.com","chilp.it","chzb.gr","cl.lk", "cl.ly", "clck.ru", "cli.gs", "cliccami.info", 
-							"clickthru.ca", "clop.in", "conta.cc", "cort.as", "cot.ag", "crks.me", "ctvr.us", "cutt.us", "dai.ly", "decenturl.com", "dfl8.me", "digbig.com", 
-							"http:\/\/digg\.com\/[^\/]+$", "disq.us", "dld.bz", "dlvr.it", "do.my", "doiop.com", "dopen.us", "easyuri.com", "easyurl.net", "eepurl.com", "eweri.com", 
-							"fa.by", "fav.me", "fb.me", "fbshare.me", "ff.im", "fff.to", "fire.to", "firsturl.de", "firsturl.net", "flic.kr", "flq.us", "fly2.ws", "fon.gs", "freak.to", 
-							"fuseurl.com", "fuzzy.to", "fwd4.me", "fwib.net", "g.ro.lt", "gizmo.do", "gl.am", "go.9nl.com", "go.ign.com", "go.usa.gov", "goo.gl", "goshrink.com", "gurl.es", 
-							"hex.io", "hiderefer.com", "hmm.ph", "href.in", "hsblinks.com", "htxt.it", "huff.to", "hulu.com", "hurl.me", "hurl.ws", "icanhaz.com", "idek.net", "ilix.in", "is.gd", 
-							"its.my", "ix.lt", "j.mp", "jijr.com", "kl.am", "klck.me", "korta.nu", "krunchd.com", "l9k.net", "lat.ms", "liip.to", "liltext.com", "linkbee.com", "linkbun.ch", 
-							"liurl.cn", "ln-s.net", "ln-s.ru", "lnk.gd", "lnk.ms", "lnkd.in", "lnkurl.com", "lru.jp", "lt.tl", "lurl.no", "macte.ch", "mash.to", "merky.de", "migre.me", "miniurl.com", 
-							"minurl.fr", "mke.me", "moby.to", "moourl.com", "mrte.ch", "myloc.me", "myurl.in", "n.pr", "nbc.co", "nblo.gs", "nn.nf", "not.my", "notlong.com", "nsfw.in", 
-							"nutshellurl.com", "nxy.in", "nyti.ms", "o-x.fr", "oc1.us", "om.ly", "omf.gd", "omoikane.net", "on.cnn.com", "on.mktw.net", "onforb.es", "orz.se", "ow.ly", "ping.fm", 
-							"pli.gs", "pnt.me", "politi.co", "post.ly", "pp.gg", "profile.to", "ptiturl.com", "pub.vitrue.com", "qlnk.net", "qte.me", "qu.tc", "qy.fi", "r.ebay.com", "r.im", "rb6.me", "read.bi", 
-							"readthis.ca", "reallytinyurl.com", "redir.ec", "redirects.ca", "redirx.com", "retwt.me", "ri.ms", "rickroll.it", "riz.gd", "rt.nu", "ru.ly", "rubyurl.com", "rurl.org", 
-							"rww.tw", "s4c.in", "s7y.us", "safe.mn", "sameurl.com", "sdut.us", "shar.es", "shink.de", "shorl.com", "short.ie", "short.to", "shortlinks.co.uk", "shorturl.com", 
-							"shout.to", "show.my", "shrinkify.com", "shrinkr.com", "shrt.fr", "shrt.st", "shrten.com", "shrunkin.com", "simurl.com", "slate.me", "smallr.com", "smsh.me", "smurl.name", 
-							"sn.im", "snipr.com", "snipurl.com", "snurl.com", "sp2.ro", "spedr.com", "srnk.net", "srs.li", "starturl.com","stks.co", "su.pr", "surl.co.uk", "surl.hu", "t.cn", "t.co", "t.lh.com", 
-							"ta.gd", "tbd.ly", "tcrn.ch", "tgr.me", "tgr.ph", "tighturl.com", "tiniuri.com", "tiny.cc", "tiny.ly", "tiny.pl", "tinylink.in", "tinyuri.ca", "tinyurl.com", "tk.", "tl.gd", 
-							"tmi.me", "tnij.org", "tnw.to", "tny.com", "to.ly", "togoto.us", "totc.us", "toysr.us", "tpm.ly", "tr.im", "tra.kz", "trunc.it", "twhub.com", "twirl.at", 
-							"twitclicks.com", "twitterurl.net", "twitterurl.org", "twiturl.de", "twurl.cc", "twurl.nl", "u.mavrev.com", "u.nu", "u76.org", "ub0.cc", "ulu.lu", "updating.me", "ur1.ca", 
-							"url.az", "url.co.uk", "url.ie", "url360.me", "url4.eu", "urlborg.com", "urlbrief.com", "urlcover.com", "urlcut.com", "urlenco.de", "urli.nl", "urls.im",
-							"urlshorteningservicefortwitter.com", "urlx.ie", "urlzen.com", "usat.ly", "use.my", "vb.ly", "vevo.ly", "vgn.am", "vl.am", "vm.lc", "w55.de", "wapo.st", "wapurl.co.uk", "wipi.es", 
-							"wp.me", "x.vu", "xr.com", "xrl.in", "xrl.us", "xurl.es", "xurl.jp", "y.ahoo.it", "yatuc.com", "ye.pe", "yep.it", "yfrog.com", "yhoo.it", "yiyd.com", "youtu.be", "yuarel.com", 
-							"z0p.de", "zi.ma", "zi.mu", "zipmyurl.com", "zud.me", "zurl.ws", "zz.gd", "zzang.kr",  "›.ws", "✩.ws", "✿.ws", "❥.ws", "➔.ws", "➞.ws", "➡.ws", "➨.ws", "➯.ws", "➹.ws", "➽.ws"];
+              "ad.vu","adf.ly","adjix.com","afx.cc","all.fuseurl.com","alturl.com","amzn.to","ar.gy","arst.ch","atu.ca","azc.cc","b23.ru","b2l.me","bacn.me","bcool.bz","binged.it",
+              "bit.ly","bizj.us","bloat.me","bravo.ly","bsa.ly","budurl.com","canurl.com","chilp.it","chzb.gr","cl.lk", "cl.ly", "clck.ru", "cli.gs", "cliccami.info", 
+              "clickthru.ca", "clop.in", "conta.cc", "cort.as", "cot.ag", "crks.me", "ctvr.us", "cutt.us", "dai.ly", "decenturl.com", "dfl8.me", "digbig.com", 
+              "http:\/\/digg\.com\/[^\/]+$", "disq.us", "dld.bz", "dlvr.it", "do.my", "doiop.com", "dopen.us", "easyuri.com", "easyurl.net", "eepurl.com", "eweri.com", 
+              "fa.by", "fav.me", "fb.me", "fbshare.me", "ff.im", "fff.to", "fire.to", "firsturl.de", "firsturl.net", "flic.kr", "flq.us", "fly2.ws", "fon.gs", "freak.to", 
+              "fuseurl.com", "fuzzy.to", "fwd4.me", "fwib.net", "g.ro.lt", "gizmo.do", "gl.am", "go.9nl.com", "go.ign.com", "go.usa.gov", "goo.gl", "goshrink.com", "gurl.es", 
+              "hex.io", "hiderefer.com", "hmm.ph", "href.in", "hsblinks.com", "htxt.it", "huff.to", "hulu.com", "hurl.me", "hurl.ws", "icanhaz.com", "idek.net", "ilix.in", "is.gd", 
+              "its.my", "ix.lt", "j.mp", "jijr.com", "kl.am", "klck.me", "korta.nu", "krunchd.com", "l9k.net", "lat.ms", "liip.to", "liltext.com", "linkbee.com", "linkbun.ch", 
+              "liurl.cn", "ln-s.net", "ln-s.ru", "lnk.gd", "lnk.ms", "lnkd.in", "lnkurl.com", "lru.jp", "lt.tl", "lurl.no", "macte.ch", "mash.to", "merky.de", "migre.me", "miniurl.com", 
+              "minurl.fr", "mke.me", "moby.to", "moourl.com", "mrte.ch", "myloc.me", "myurl.in", "n.pr", "nbc.co", "nblo.gs", "nn.nf", "not.my", "notlong.com", "nsfw.in", 
+              "nutshellurl.com", "nxy.in", "nyti.ms", "o-x.fr", "oc1.us", "om.ly", "omf.gd", "omoikane.net", "on.cnn.com", "on.mktw.net", "onforb.es", "orz.se", "ow.ly", "ping.fm", 
+              "pli.gs", "pnt.me", "politi.co", "post.ly", "pp.gg", "profile.to", "ptiturl.com", "pub.vitrue.com", "qlnk.net", "qte.me", "qu.tc", "qy.fi", "r.ebay.com", "r.im", "rb6.me", "read.bi", 
+              "readthis.ca", "reallytinyurl.com", "redir.ec", "redirects.ca", "redirx.com", "retwt.me", "ri.ms", "rickroll.it", "riz.gd", "rt.nu", "ru.ly", "rubyurl.com", "rurl.org", 
+              "rww.tw", "s4c.in", "s7y.us", "safe.mn", "sameurl.com", "sdut.us", "shar.es", "shink.de", "shorl.com", "short.ie", "short.to", "shortlinks.co.uk", "shorturl.com", 
+              "shout.to", "show.my", "shrinkify.com", "shrinkr.com", "shrt.fr", "shrt.st", "shrten.com", "shrunkin.com", "simurl.com", "slate.me", "smallr.com", "smsh.me", "smurl.name", 
+              "sn.im", "snipr.com", "snipurl.com", "snurl.com", "sp2.ro", "spedr.com", "srnk.net", "srs.li", "starturl.com","stks.co", "su.pr", "surl.co.uk", "surl.hu", "t.cn", "t.co", "t.lh.com", 
+              "ta.gd", "tbd.ly", "tcrn.ch", "tgr.me", "tgr.ph", "tighturl.com", "tiniuri.com", "tiny.cc", "tiny.ly", "tiny.pl", "tinylink.in", "tinyuri.ca", "tinyurl.com", "tk.", "tl.gd", 
+              "tmi.me", "tnij.org", "tnw.to", "tny.com", "to.ly", "togoto.us", "totc.us", "toysr.us", "tpm.ly", "tr.im", "tra.kz", "trunc.it", "twhub.com", "twirl.at", 
+              "twitclicks.com", "twitterurl.net", "twitterurl.org", "twiturl.de", "twurl.cc", "twurl.nl", "u.mavrev.com", "u.nu", "u76.org", "ub0.cc", "ulu.lu", "updating.me", "ur1.ca", 
+              "url.az", "url.co.uk", "url.ie", "url360.me", "url4.eu", "urlborg.com", "urlbrief.com", "urlcover.com", "urlcut.com", "urlenco.de", "urli.nl", "urls.im",
+              "urlshorteningservicefortwitter.com", "urlx.ie", "urlzen.com", "usat.ly", "use.my", "vb.ly", "vevo.ly", "vgn.am", "vl.am", "vm.lc", "w55.de", "wapo.st", "wapurl.co.uk", "wipi.es", 
+              "wp.me", "x.vu", "xr.com", "xrl.in", "xrl.us", "xurl.es", "xurl.jp", "y.ahoo.it", "yatuc.com", "ye.pe", "yep.it", "yfrog.com", "yhoo.it", "yiyd.com", "youtu.be", "yuarel.com", 
+              "z0p.de", "zi.ma", "zi.mu", "zipmyurl.com", "zud.me", "zurl.ws", "zz.gd", "zzang.kr",  "›.ws", "✩.ws", "✿.ws", "❥.ws", "➔.ws", "➞.ws", "➡.ws", "➨.ws", "➯.ws", "➹.ws", "➽.ws"];
 
         if ($('#jqoembeddata').length === 0) $('<span id="jqoembeddata"></span>').appendTo('body');
 
         return this.each(function() {
-            var container = $(this),
-                resourceURL =  (url && (!url.indexOf('http://') || !url.indexOf('https://'))) ? url : container.attr("href"),
-                provider;
+          var container = $(this),
+              resourceURL =  (url && (!url.indexOf('http://') || !url.indexOf('https://'))) ? url : container.attr("href"),
+              provider;
 
-            if (embedAction) {
-                settings.onEmbed = embedAction;
+          if (embedAction) {
+              settings.onEmbed = embedAction;
+          }
+          else if (!settings.onEmbed){
+              settings.onEmbed = function(oembedData) {
+                  $.fn.oembed.insertCode(this, settings.embedMethod, oembedData);
+              };
+          }
+
+          if (resourceURL !== null && resourceURL !== undefined) {
+            //Check if shorten URL
+            for (var j = 0, l =shortURLList.length; j < l; j++) {
+              var regExp = new RegExp('://'+shortURLList[j]+'/', "i");
+
+              if (resourceURL.match(regExp) !== null) {
+                //AJAX to http://api.longurl.org/v2/expand?url=http://bit.ly/JATvIs&format=json&callback=hhh
+                var ajaxopts = $.extend({
+                    url: "http://api.longurl.org/v2/expand",
+                    dataType: 'jsonp',
+                    data: {
+                    url: resourceURL,
+                    format: "json"
+                    //callback: "?"
+                    },
+                    success: function (data) {
+                        //this = $.fn.oembed;
+                        resourceURL = data['long-url'];
+                        provider = $.fn.oembed.getOEmbedProvider(data['long-url']);
+
+                        //remove fallback
+                        if (!!settings.fallback === false) {
+                            provider = provider.name.toLowerCase() === 'opengraph' ? null : provider;
+                        }
+
+                        if (provider !== null) {
+                            provider.params = getNormalizedParams(settings[provider.name]) || {};
+                            provider.maxWidth = settings.maxWidth;
+                            provider.maxHeight = settings.maxHeight;
+                            embedCode(container, resourceURL, provider);
+                        } else {
+                            settings.onProviderNotFound.call(container, resourceURL);
+                        }
+                    },
+                    error: function() {
+                            settings.onError.call(container, resourceURL)
+                          }
+                  }, settings.ajaxOptions || {});
+
+                $.ajax(ajaxopts);
+            
+                return container;
+              }
             }
-            else if (!settings.onEmbed){
-                settings.onEmbed = function(oembedData) {
-                    $.fn.oembed.insertCode(this, settings.embedMethod, oembedData);
-                };
+            provider = $.fn.oembed.getOEmbedProvider(resourceURL);
+
+              //remove fallback
+            if (!!settings.fallback === false) {
+                provider = provider.name.toLowerCase() === 'opengraph' ? null : provider;
             }
-
-            if (resourceURL !== null && resourceURL !== undefined) {
-				//Check if shorten URL
-				for (var j = 0, l =shortURLList.length; j < l; j++) {
-					var regExp = new RegExp('://'+shortURLList[j]+'/', "i");
-					if (resourceURL.match(regExp) !== null) {
-					//AJAX to http://api.longurl.org/v2/expand?url=http://bit.ly/JATvIs&format=json&callback=hhh
-					var ajaxopts = $.extend({
-						  url: "http://api.longurl.org/v2/expand",
-						  dataType: 'jsonp',
-						  data: {
-							url: resourceURL,
-							format: "json"
-							//callback: "?"
-						  },
-                        success: function (data) {
-                            //this = $.fn.oembed;
-                            resourceURL = data['long-url'];
-                            provider = $.fn.oembed.getOEmbedProvider(data['long-url']);
-
-                            //remove fallback
-                            if (!!settings.fallback === false) {
-                                provider = provider.name.toLowerCase() === 'opengraph' ? null : provider;
-                            }
-
-                            if (provider !== null) {
-                                provider.params = getNormalizedParams(settings[provider.name]) || {};
-                                provider.maxWidth = settings.maxWidth;
-                                provider.maxHeight = settings.maxHeight;
-                                embedCode(container, resourceURL, provider);
-                            } else {
-                                settings.onProviderNotFound.call(container, resourceURL);
-                            }
-                        },
-						  error: function() {
-              				settings.onError.call(container, resourceURL)
-            			  }
-						}, settings.ajaxOptions || {});
-						
-						$.ajax(ajaxopts);
-						
-						return container;
-					}
-				}
-                provider = $.fn.oembed.getOEmbedProvider(resourceURL);
-
-                //remove fallback
-                if (!!settings.fallback === false) {
-                    provider = provider.name.toLowerCase() === 'opengraph' ? null : provider;
-                }
-                if (provider !== null) {
-                    provider.params = getNormalizedParams(settings[provider.name]) || {};
-                    provider.maxWidth = settings.maxWidth;
-                    provider.maxHeight = settings.maxHeight;
-                    embedCode(container, resourceURL, provider);
-                } else {
-                    settings.onProviderNotFound.call(container, resourceURL);
-                }
+            if (provider !== null) {
+                provider.params = getNormalizedParams(settings[provider.name]) || {};
+                provider.maxWidth = settings.maxWidth;
+                provider.maxHeight = settings.maxHeight;
+                embedCode(container, resourceURL, provider);
+            } else {
+                settings.onProviderNotFound.call(container, resourceURL);
             }
-
-            return container;
+          }          
+          return container;
         });
-
-
     };
 
     var settings;
 
     // Plugin defaults
     $.fn.oembed.defaults = {
-        fallback: true,
-        maxWidth: null,
-        maxHeight: null,
-		includeHandle: true,
-        embedMethod: 'auto',
-        // "auto", "append", "fill"		
-        onProviderNotFound: function( ) {},
-        beforeEmbed: function() {},
-        afterEmbed: function() {},
-        onEmbed: false,
-        onError: function() {},
-        ajaxOptions: {}
+      fallback: true,
+      maxWidth: null,
+      maxHeight: null,
+      includeHandle: true,
+      embedMethod: 'auto',
+      // "auto", "append", "fill"   
+      onProviderNotFound: function( ) {},
+      beforeEmbed: function() {},
+      afterEmbed: function() {},
+      onEmbed: false,
+      onError: function(a, b, c, d) {console.log('err:', a, b, c, d)},
+      ajaxOptions: {}
     };
 
     /* Private functions */
@@ -171,10 +169,10 @@
         return url;
     }
     function success(oembedData, externalUrl, container) {
-        $('#jqoembeddata').data(externalUrl, oembedData.code);
-        settings.beforeEmbed.call(container, oembedData);
-        settings.onEmbed.call(container, oembedData);
-        settings.afterEmbed.call(container, oembedData);
+      $('#jqoembeddata').data(externalUrl, oembedData.code);
+      settings.beforeEmbed.call(container, oembedData);
+      settings.onEmbed.call(container, oembedData);
+      settings.afterEmbed.call(container, oembedData);
     }
 
     function embedCode(container, externalUrl, embedProvider) {
@@ -183,7 +181,7 @@
         success(oembedData, externalUrl, container);
       }else if (embedProvider.yql) {
         var from = embedProvider.yql.from || 'htmlstring';
-		var url = embedProvider.yql.url ? embedProvider.yql.url(externalUrl) : externalUrl;
+        var url = embedProvider.yql.url ? embedProvider.yql.url(externalUrl) : externalUrl;
         var query = 'SELECT * FROM ' 
             + from 
             + ' WHERE url="' + (url) + '"' 
@@ -200,38 +198,40 @@
           },
           success: function(data) {
             var result;
+
             if(embedProvider.yql.xpath && embedProvider.yql.xpath=='//meta|//title|//link'){
-                var meta={};
-				if (data.query == null) {
-                  data.query = {};
+              var meta={};
+
+              if (data.query == null) {
+                data.query = {};
+              }
+              if (data.query.results == null) {
+                data.query.results = {"meta": []};
+              }
+              for(var i=0, l=data.query.results.meta.length; i<l; i++){
+                var name = data.query.results.meta[i].name||data.query.results.meta[i].property||null;
+                if(name==null)continue;
+                meta[name.toLowerCase()]=data.query.results.meta[i].content;
+              }
+              if (!meta.hasOwnProperty("title") || !meta.hasOwnProperty("og:title") ) {
+                if ( data.query.results.title != null ) {
+                  meta.title = data.query.results.title;
                 }
-                if (data.query.results == null) {
-                  data.query.results = {"meta": []};
+              }
+              if (!meta.hasOwnProperty("og:image") && data.query.results.hasOwnProperty("link")) {
+                for ( var i=0, l=data.query.results.link.length; i<l; i++){
+                  if ( data.query.results.link[i].hasOwnProperty("rel") ) {
+                    if (data.query.results.link[i].rel == "apple-touch-icon") {
+                      if ( data.query.results.link[i].href.charAt(0) == "/" ) {
+                        meta["og:image"] = url.match(/^(([a-z]+:)?(\/\/)?[^\/]+\/).*$/)[1] + data.query.results.link[i].href;
+                      } else {
+                        meta["og:image"] = data.query.results.link[i].href;
+                      }
+                    }
+                  }
                 }
-                for(var i=0, l=data.query.results.meta.length; i<l; i++){
-                  var name = data.query.results.meta[i].name||data.query.results.meta[i].property||null;
-                  if(name==null)continue;
-                  meta[name.toLowerCase()]=data.query.results.meta[i].content;
-                }
-				if (!meta.hasOwnProperty("title") || !meta.hasOwnProperty("og:title") ) {
-					if ( data.query.results.title != null ) {
-						meta.title = data.query.results.title;
-					}
-				}
-				if (!meta.hasOwnProperty("og:image") && data.query.results.hasOwnProperty("link")) {
-					for ( var i=0, l=data.query.results.link.length; i<l; i++){
-						if ( data.query.results.link[i].hasOwnProperty("rel") ) {
-							if (data.query.results.link[i].rel == "apple-touch-icon") {
-								if ( data.query.results.link[i].href.charAt(0) == "/" ) {
-									meta["og:image"] = url.match(/^(([a-z]+:)?(\/\/)?[^\/]+\/).*$/)[1] + data.query.results.link[i].href;
-								} else {
-									meta["og:image"] = data.query.results.link[i].href;
-								}
-							}
-						}
-					}
-				}
-                result = embedProvider.yql.datareturn(meta);
+              }
+              result = embedProvider.yql.datareturn(meta);
             }else{
               result = embedProvider.yql.datareturn ? embedProvider.yql.datareturn(data.query.results) : data.query.results.result;
             }
@@ -242,7 +242,6 @@
           },
           error: settings.onError.call(container, externalUrl, embedProvider)
         }, settings.ajaxOptions || {});
-        
         $.ajax(ajaxopts);
       }else if (embedProvider.templateRegex) {
         if(embedProvider.embedtag.tag!==''){
@@ -256,13 +255,13 @@
           
            
           var code = $('<'+tag+'/>')
-            .attr('src',src)
-            .attr('width',width)
-            .attr('height',height)
-            .attr('allowfullscreen',embedProvider.embedtag.allowfullscreen || 'true')
-            .attr('allowscriptaccess',embedProvider.embedtag.allowfullscreen || 'always')
-            .css('max-height', settings.maxHeight || 'auto' )
-            .css('max-width', settings.maxWidth || 'auto' );
+              .attr('src',src)
+              .attr('width',width)
+              .attr('height',height)
+              .attr('allowfullscreen',embedProvider.embedtag.allowfullscreen || 'true')
+              .attr('allowscriptaccess',embedProvider.embedtag.allowfullscreen || 'always')
+              .css('max-height', settings.maxHeight || 'auto' )
+              .css('max-width', settings.maxWidth || 'auto' );
           if(tag=='embed')
             code
               .attr('type',embedProvider.embedtag.type || "application/x-shockwave-flash")
@@ -288,9 +287,9 @@
             },
             error: settings.onError.call(container, externalUrl, embedProvider)
             }, settings.ajaxOptions || {});
-            
           $.ajax( ajaxopts );
         }else {
+
             var oembedData = {code: externalUrl.replace(embedProvider.templateRegex,embedProvider.template)};
             success(oembedData, externalUrl,container);
         }
@@ -319,7 +318,6 @@
                 },
                 error: settings.onError.call(container, externalUrl, embedProvider)
             }, settings.ajaxOptions || {});
-
         $.ajax(ajaxopts);
       }
     };
@@ -348,19 +346,19 @@
           case "append":
               container.wrap('<div class="oembedall-container"></div>');
               var oembedContainer = container.parent();
-			  if (settings.includeHandle) {
-				  $('<span class="oembedall-closehide">&darr;</span>').insertBefore(container).click(function() {
-					  var encodedString = encodeURIComponent($(this).text());
-					  $(this).html((encodedString == '%E2%86%91') ? '&darr;' : '&uarr;');
-					  $(this).parent().children().last().toggle();
-				  });
-			  }
+        if (settings.includeHandle) {
+          $('<span class="oembedall-closehide">&darr;</span>').insertBefore(container).click(function() {
+            var encodedString = encodeURIComponent($(this).text());
+            $(this).html((encodedString == '%E2%86%91') ? '&darr;' : '&uarr;');
+            $(this).parent().children().last().toggle();
+          });
+        }
               oembedContainer.append('<br/>');
-			  try {
-				  oembedData.code.clone().appendTo(oembedContainer);
-			  } catch(e) {
+        try {
+          oembedData.code.clone().appendTo(oembedContainer);
+        } catch(e) {
               oembedContainer.append(oembedData.code);
-			  }			
+        }     
               /* Make videos semi-responsive
               * If parent div width less than embeded iframe video then iframe gets shrunk to fit smaller width
               * If parent div width greater thans embed iframe use the max widht
@@ -426,6 +424,7 @@
         return null;
     };
 
+    // Constructor Function for OEmbedProvider Class.
     $.fn.oembed.OEmbedProvider = function(name, type, urlschemesarray, apiendpoint, extraSettings) {
         this.name = name;
         this.type = type; // "photo", "video", "link", "rich", null
@@ -448,11 +447,11 @@
               , apiendpoint: this.apiendpoint
               , url: function(externalurl){return this.apiendpoint+'?format=json&url='+externalurl}
               , datareturn:function(results){
-					if (results.json.type != 'video' && (results.json.url || results.json.thumbnail_url)) {
-						return '<img src="' + (results.json.url || results.json.thumbnail_url) + '" />';
-					}
-					return results.json.html || ''
-				}
+          if (results.json.type != 'video' && (results.json.url || results.json.thumbnail_url)) {
+            return '<img src="' + (results.json.url || results.json.thumbnail_url) + '" />';
+          }
+          return results.json.html || ''
+        }
             };
           }
           this.apiendpoint = null;
@@ -557,8 +556,8 @@
     new $.fn.oembed.OEmbedProvider("videojug", "video", ["videojug\\.com/(film|payer|interview).*"], "http://www.videojug.com/oembed.json",{useYQL:'json'}),
     new $.fn.oembed.OEmbedProvider("sapo", "video", ["videos\\.sapo\\.pt/.*"], "http://videos.sapo.pt/oembed",{useYQL:'json'}),
     new $.fn.oembed.OEmbedProvider("vodpod", "video", ["vodpod.com/watch/.*"], "http://vodpod.com/oembed.js",{useYQL:'json'}),
-	new $.fn.oembed.OEmbedProvider("vimeo", "video", ["www\.vimeo\.com\/groups\/.*\/videos\/.*", "www\.vimeo\.com\/.*", "vimeo\.com\/groups\/.*\/videos\/.*", "vimeo\.com\/.*"], "//vimeo.com/api/oembed.json"),
-	new $.fn.oembed.OEmbedProvider("dailymotion", "video", ["dailymotion\\.com/.+"],'//www.dailymotion.com/services/oembed'), 
+    new $.fn.oembed.OEmbedProvider("vimeo", "video", ["www\.vimeo\.com\/groups\/.*\/videos\/.*", "www\.vimeo\.com\/.*", "vimeo\.com\/groups\/.*\/videos\/.*", "vimeo\.com\/.*"], "//vimeo.com/api/oembed.json"),
+    new $.fn.oembed.OEmbedProvider("dailymotion", "video", ["dailymotion\\.com/.+"],'//www.dailymotion.com/services/oembed'), 
     new $.fn.oembed.OEmbedProvider("5min", "video", ["www\\.5min\\.com/.+"], 'http://api.5min.com/oembed.xml',{useYQL:'xml'}),
     new $.fn.oembed.OEmbedProvider("National Film Board of Canada", "video", ["nfb\\.ca/film/.+"],'http://www.nfb.ca/remote/services/oembed/',{useYQL:'json'}),
     new $.fn.oembed.OEmbedProvider("qik", "video", ["qik\\.com/\\w+"], 'http://qik.com/api/oembed.json',{useYQL:'json'}),
@@ -581,34 +580,34 @@
     new $.fn.oembed.OEmbedProvider("official.fm", "rich", ["official.fm/.+"], 'http://official.fm/services/oembed',{useYQL:'json'}),
     new $.fn.oembed.OEmbedProvider("chirbit", "rich", ["chirb.it/.+"], 'http://chirb.it/oembed.json',{useYQL:'json'}),
     new $.fn.oembed.OEmbedProvider("Huffduffer", "rich", ["huffduffer.com/[-.\\w@]+/\\d+"], "http://huffduffer.com/oembed"),
-     new $.fn.oembed.OEmbedProvider("Spotify", "rich", ["open.spotify.com/(track|album|user)/"], "https://embed.spotify.com/oembed/"),
+    new $.fn.oembed.OEmbedProvider("Spotify", "rich", ["open.spotify.com/(track|album|user)/"], "https://embed.spotify.com/oembed/"),
     new $.fn.oembed.OEmbedProvider("shoudio", "rich", ["shoudio.com/.+","shoud.io/.+"], "http://shoudio.com/api/oembed"),
     new $.fn.oembed.OEmbedProvider("mixcloud", "rich", ["mixcloud.com/.+"],'http://www.mixcloud.com/oembed/',{useYQL:'json'}),
     new $.fn.oembed.OEmbedProvider("rdio.com", "rich", ["rd.io/.+","rdio.com"], "http://www.rdio.com/api/oembed/"),
     new $.fn.oembed.OEmbedProvider("Soundcloud", "rich", ["soundcloud.com/.+","snd.sc/.+"], "//soundcloud.com/oembed",{format:'js'}),
     new $.fn.oembed.OEmbedProvider("bandcamp", "rich", ["bandcamp\\.com/album/.+"], null,
-		{yql:{xpath:"//meta[contains(@content, \\'EmbeddedPlayer\\')]", from:'html'
-		  , datareturn:function(results){
-			  return results.meta ?'<iframe width="400" height="100" src="'+results.meta.content+'" allowtransparency="true" frameborder="0"></iframe>':false;
-			  }
-		  }
-		}),
+    {yql:{xpath:"//meta[contains(@content, \\'EmbeddedPlayer\\')]", from:'html'
+      , datareturn:function(results){
+        return results.meta ?'<iframe width="400" height="100" src="'+results.meta.content+'" allowtransparency="true" frameborder="0"></iframe>':false;
+        }
+      }
+    }),
     
      //Photo
-		new $.fn.oembed.OEmbedProvider("deviantart", "photo", ["deviantart.com/.+","fav.me/.+","deviantart.com/.+"], "//backend.deviantart.com/oembed",{format:'jsonp'}),
-		new $.fn.oembed.OEmbedProvider("skitch", "photo", ["skitch.com/.+"], null,
+    new $.fn.oembed.OEmbedProvider("deviantart", "photo", ["deviantart.com/.+","fav.me/.+","deviantart.com/.+"], "//backend.deviantart.com/oembed",{format:'jsonp'}),
+    new $.fn.oembed.OEmbedProvider("skitch", "photo", ["skitch.com/.+"], null,
     {yql:{xpath:"json", from:'json'
           , url: function(externalurl){return 'http://skitch.com/oembed/?format=json&url='+externalurl}
           , datareturn:function(data){return $.fn.oembed.getPhotoCode( data.json.url, data.json);}
         }
     }),
-		new $.fn.oembed.OEmbedProvider("mobypicture", "photo", ["mobypicture.com/user/.+/view/.+","moby.to/.+"], "http://api.mobypicture.com/oEmbed"),
-		new $.fn.oembed.OEmbedProvider("flickr", "photo", ["flickr\\.com/photos/.+"], "//flickr.com/services/oembed",{callbackparameter:'jsoncallback'}),
-		new $.fn.oembed.OEmbedProvider("photobucket", "photo", ["photobucket\\.com/(albums|groups)/.+"], "http://photobucket.com/oembed/"),
-		new $.fn.oembed.OEmbedProvider("instagram", "photo", ["instagr\\.?am(\\.com)?/.+"], "//api.instagram.com/oembed"),
-		//new $.fn.oembed.OEmbedProvider("yfrog", "photo", ["yfrog\\.(com|ru|com\\.tr|it|fr|co\\.il|co\\.uk|com\\.pl|pl|eu|us)/.+"], "http://www.yfrog.com/api/oembed",{useYQL:"json"}),
-		new $.fn.oembed.OEmbedProvider("SmugMug", "photo", ["smugmug.com/[-.\\w@]+/.+"], "http://api.smugmug.com/services/oembed/"),
-		
+    new $.fn.oembed.OEmbedProvider("mobypicture", "photo", ["mobypicture.com/user/.+/view/.+","moby.to/.+"], "http://api.mobypicture.com/oEmbed"),
+    new $.fn.oembed.OEmbedProvider("flickr", "photo", ["flickr\\.com/photos/.+"], "//flickr.com/services/oembed",{callbackparameter:'jsoncallback'}),
+    new $.fn.oembed.OEmbedProvider("photobucket", "photo", ["photobucket\\.com/(albums|groups)/.+"], "http://photobucket.com/oembed/"),
+    new $.fn.oembed.OEmbedProvider("instagram", "photo", ["instagr\\.?am(\\.com)?/.+"], "//api.instagram.com/oembed"),
+    //new $.fn.oembed.OEmbedProvider("yfrog", "photo", ["yfrog\\.(com|ru|com\\.tr|it|fr|co\\.il|co\\.uk|com\\.pl|pl|eu|us)/.+"], "http://www.yfrog.com/api/oembed",{useYQL:"json"}),
+    new $.fn.oembed.OEmbedProvider("SmugMug", "photo", ["smugmug.com/[-.\\w@]+/.+"], "http://api.smugmug.com/services/oembed/"),
+    
     new $.fn.oembed.OEmbedProvider("dribbble", "photo", ["dribbble.com/shots/.+"], "http://api.dribbble.com/shots/$1?callback=?",
       { templateRegex:/.*shots\/([\d]+).*/,
       templateData : function(data){if(!data.image_teaser_url)return false;
@@ -618,7 +617,7 @@
     new $.fn.oembed.OEmbedProvider("chart.ly", "photo", ["chart\\.ly/[a-z0-9]{6,8}"],"http://chart.ly/uploads/large_$1.png",
       {templateRegex:/.*ly\/([^\/]+).*/ , embedtag : {tag:'img'},nocache:1}), 
     //new $.fn.oembed.OEmbedProvider("stocktwits.com", "photo", ["stocktwits\\.com/message/.+"], "http://charts.stocktwits.com/production/original_$1.png?",
-	//	{ templateRegex: /.*message\/([^\/]+).*/, embedtag: { tag: 'img'},nocache:1 }),
+  //  { templateRegex: /.*message\/([^\/]+).*/, embedtag: { tag: 'img'},nocache:1 }),
     new $.fn.oembed.OEmbedProvider("circuitlab", "photo", ["circuitlab.com/circuit/.+"],"https://www.circuitlab.com/circuit/$1/screenshot/540x405/",
       {templateRegex:/.*circuit\/([^\/]+).*/ , embedtag : {tag:'img'},nocache:1}),
     new $.fn.oembed.OEmbedProvider("23hq", "photo", ["23hq.com/[-.\\w@]+/photo/.+"],"http://www.23hq.com/23/oembed",{useYQL:"json"}),
@@ -631,14 +630,14 @@
     new $.fn.oembed.OEmbedProvider("visual.ly", "rich", ["visual\\.ly/.+"], null,
       {yql:{xpath:"//a[@id=\\'gc_article_graphic_image\\']/img", from:'htmlstring'}
       }),
-		new $.fn.oembed.OEmbedProvider("gravtar", "photo", ["mailto:.+"],null,
+    new $.fn.oembed.OEmbedProvider("gravtar", "photo", ["mailto:.+"],null,
       {templateRegex:/mailto:([^\/]+).*/ 
       , template : function(wm,email){
         return '<img src="http://gravatar.com/avatar/'+email.md5()+'.jpg" alt="on Gravtar" class="jqoaImg">';
         }
       }),
       
-		//Rich
+    //Rich
     new $.fn.oembed.OEmbedProvider("twitter", "rich", ["twitter.com/.+"], "https://api.twitter.com/1/statuses/oembed.json"),
     new $.fn.oembed.OEmbedProvider("gmep", "rich", ["gmep.imeducate.com/.*","gmep.org/.*"], "http://gmep.org/oembed.json"),
     new $.fn.oembed.OEmbedProvider("urtak", "rich", ["urtak.com/(u|clr)/.+"], "http://oembed.urtak.com/1/oembed"),
@@ -669,7 +668,7 @@
         }
       }),
     
-		new $.fn.oembed.OEmbedProvider("meetup", "rich", ["meetup\\.(com|ps)/.+"], "http://api.meetup.com/oembed"),
+    new $.fn.oembed.OEmbedProvider("meetup", "rich", ["meetup\\.(com|ps)/.+"], "http://api.meetup.com/oembed"),
     new $.fn.oembed.OEmbedProvider("ebay", "rich", ["ebay\\.*"],"http://togo.ebay.com/togo/togo.swf?2008013100",
     {templateRegex:/.*\/([^\/]+)\/(\d{10,13}).*/, embedtag : {width:355,height: 300,
         flashvars : "base=http://togo.ebay.com/togo/&lang=en-us&mode=normal&itemid=$2&query=$1"
@@ -737,7 +736,26 @@
             +'<p class="oembedall-updated-at">Last updated: '+data.data.pushed_at+'</p></div></div>';
         }
       }),
-    
+    new $.fn.oembed.OEmbedProvider("facebook", "rich", ["facebook.com"], null
+    ,{templateRegex:/.*\/([^\/]+)\/([^\/]+).*/,
+      template: function(url){
+        // adding script directly to DOM to make sure that it is loaded correctly.
+        if(!$.fn.oembed.facebokScriptHasBeenAdded){
+          $('<div id="fb-root"></div>').appendTo('body');
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.text = '(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, "script", "facebook-jssdk"));';
+          document.body.appendChild(script);
+          $.fn.oembed.facebokScriptHasBeenAdded = true;
+        }
+
+        // returning template with url of facebook post.
+        return '<div class="fb-post" data-href="' + url + '" data-width="520"><div class="fb-xfbml-parse-ignore"><a href="' + url + '"></div></div>';
+        
+      }
+    }), 
+/*
+  // Saving old implementation of Facebook in case we will need it as example in the future.
     new $.fn.oembed.OEmbedProvider("facebook", "rich", ["facebook.com/(people/[^\\/]+/\\d+|[^\\/]+$)"], "https://graph.facebook.com/$2$3/?callback=?"
     ,{templateRegex:/.*facebook.com\/(people\/[^\/]+\/(\d+).*|([^\/]+$))/,
       templateData : function(data){ if(!data.id)return false;
@@ -759,6 +777,7 @@
           return out;
         }
       }),
+*/
     new $.fn.oembed.OEmbedProvider("stackoverflow", "rich", ["stackoverflow.com/questions/[\\d]+"], "http://api.stackoverflow.com/1.1/questions/$1?body=true&jsonp=?"
     ,{templateRegex:/.*questions\/([\d]+).*/,
       templateData : function(data){ 
@@ -784,7 +803,7 @@
       {templateRegex:/.*\/([^\/]+).*/ 
       ,embedtag : {tag: 'iframe', width:'650',height: 396}
       }) ,
-		new $.fn.oembed.OEmbedProvider("gigpans", "rich", ["gigapan\\.org/[-.\\w@]+/\\d+"],"http://gigapan.org/gigapans/$1/options/nosnapshots/iframe/flash.html",
+    new $.fn.oembed.OEmbedProvider("gigpans", "rich", ["gigapan\\.org/[-.\\w@]+/\\d+"],"http://gigapan.org/gigapans/$1/options/nosnapshots/iframe/flash.html",
       {templateRegex:/.*\/(\d+)\/?.*/,
       embedtag : {tag: 'iframe', width:'100%',height: 400 }
       }), 
@@ -867,6 +886,5 @@
 
     ];
 })(jQuery);
-
 //This is needed for gravatar :(
-String.prototype.md5=function(){var a=function(a,b){var c=(a&65535)+(b&65535);var d=(a>>16)+(b>>16)+(c>>16);return d<<16|c&65535};var b=function(a,b){return a<<b|a>>>32-b};var c=function(c,d,e,f,g,h){return a(b(a(a(d,c),a(f,h)),g),e)};var d=function(a,b,d,e,f,g,h){return c(b&d|~b&e,a,b,f,g,h)};var e=function(a,b,d,e,f,g,h){return c(b&e|d&~e,a,b,f,g,h)};var f=function(a,b,d,e,f,g,h){return c(b^d^e,a,b,f,g,h)};var g=function(a,b,d,e,f,g,h){return c(d^(b|~e),a,b,f,g,h)};var h=function(b){var c,h,i,j,k,l=b.length;var m=1732584193;var n=-271733879;var o=-1732584194;var p=271733878;for(k=0;k<l;k+=16){c=m;h=n;i=o;j=p;m=d(m,n,o,p,b[k+0],7,-680876936);p=d(p,m,n,o,b[k+1],12,-389564586);o=d(o,p,m,n,b[k+2],17,606105819);n=d(n,o,p,m,b[k+3],22,-1044525330);m=d(m,n,o,p,b[k+4],7,-176418897);p=d(p,m,n,o,b[k+5],12,1200080426);o=d(o,p,m,n,b[k+6],17,-1473231341);n=d(n,o,p,m,b[k+7],22,-45705983);m=d(m,n,o,p,b[k+8],7,1770035416);p=d(p,m,n,o,b[k+9],12,-1958414417);o=d(o,p,m,n,b[k+10],17,-42063);n=d(n,o,p,m,b[k+11],22,-1990404162);m=d(m,n,o,p,b[k+12],7,1804603682);p=d(p,m,n,o,b[k+13],12,-40341101);o=d(o,p,m,n,b[k+14],17,-1502002290);n=d(n,o,p,m,b[k+15],22,1236535329);m=e(m,n,o,p,b[k+1],5,-165796510);p=e(p,m,n,o,b[k+6],9,-1069501632);o=e(o,p,m,n,b[k+11],14,643717713);n=e(n,o,p,m,b[k+0],20,-373897302);m=e(m,n,o,p,b[k+5],5,-701558691);p=e(p,m,n,o,b[k+10],9,38016083);o=e(o,p,m,n,b[k+15],14,-660478335);n=e(n,o,p,m,b[k+4],20,-405537848);m=e(m,n,o,p,b[k+9],5,568446438);p=e(p,m,n,o,b[k+14],9,-1019803690);o=e(o,p,m,n,b[k+3],14,-187363961);n=e(n,o,p,m,b[k+8],20,1163531501);m=e(m,n,o,p,b[k+13],5,-1444681467);p=e(p,m,n,o,b[k+2],9,-51403784);o=e(o,p,m,n,b[k+7],14,1735328473);n=e(n,o,p,m,b[k+12],20,-1926607734);m=f(m,n,o,p,b[k+5],4,-378558);p=f(p,m,n,o,b[k+8],11,-2022574463);o=f(o,p,m,n,b[k+11],16,1839030562);n=f(n,o,p,m,b[k+14],23,-35309556);m=f(m,n,o,p,b[k+1],4,-1530992060);p=f(p,m,n,o,b[k+4],11,1272893353);o=f(o,p,m,n,b[k+7],16,-155497632);n=f(n,o,p,m,b[k+10],23,-1094730640);m=f(m,n,o,p,b[k+13],4,681279174);p=f(p,m,n,o,b[k+0],11,-358537222);o=f(o,p,m,n,b[k+3],16,-722521979);n=f(n,o,p,m,b[k+6],23,76029189);m=f(m,n,o,p,b[k+9],4,-640364487);p=f(p,m,n,o,b[k+12],11,-421815835);o=f(o,p,m,n,b[k+15],16,530742520);n=f(n,o,p,m,b[k+2],23,-995338651);m=g(m,n,o,p,b[k+0],6,-198630844);p=g(p,m,n,o,b[k+7],10,1126891415);o=g(o,p,m,n,b[k+14],15,-1416354905);n=g(n,o,p,m,b[k+5],21,-57434055);m=g(m,n,o,p,b[k+12],6,1700485571);p=g(p,m,n,o,b[k+3],10,-1894986606);o=g(o,p,m,n,b[k+10],15,-1051523);n=g(n,o,p,m,b[k+1],21,-2054922799);m=g(m,n,o,p,b[k+8],6,1873313359);p=g(p,m,n,o,b[k+15],10,-30611744);o=g(o,p,m,n,b[k+6],15,-1560198380);n=g(n,o,p,m,b[k+13],21,1309151649);m=g(m,n,o,p,b[k+4],6,-145523070);p=g(p,m,n,o,b[k+11],10,-1120210379);o=g(o,p,m,n,b[k+2],15,718787259);n=g(n,o,p,m,b[k+9],21,-343485551);m=a(m,c);n=a(n,h);o=a(o,i);p=a(p,j)}return[m,n,o,p]};var i=function(a){var b="0123456789abcdef",c="",d,e=a.length*4;for(d=0;d<e;d++){c+=b.charAt(a[d>>2]>>d%4*8+4&15)+b.charAt(a[d>>2]>>d%4*8&15)}return c};var j=function(a){var b=(a.length+8>>6)+1;var c=[],d,e=b*16,f,g=a.length;for(d=0;d<e;d++){c.push(0)}for(f=0;f<g;f++){c[f>>2]|=(a.charCodeAt(f)&255)<<f%4*8}c[f>>2]|=128<<f%4*8;c[b*16-2]=g*8;return c};return i(h(j(this)))}
+String.prototype.md5=function(){var a=function(a,b){var c=(a&65535)+(b&65535);var d=(a>>16)+(b>>16)+(c>>16);return d<<16|c&65535};var b=function(a,b){return a<<b|a>>>32-b};var c=function(c,d,e,f,g,h){return a(b(a(a(d,c),a(f,h)),g),e)};var d=function(a,b,d,e,f,g,h){return c(b&d|~b&e,a,b,f,g,h)};var e=function(a,b,d,e,f,g,h){return c(b&e|d&~e,a,b,f,g,h)};var f=function(a,b,d,e,f,g,h){return c(b^d^e,a,b,f,g,h)};var g=function(a,b,d,e,f,g,h){return c(d^(b|~e),a,b,f,g,h)};var h=function(b){var c,h,i,j,k,l=b.length;var m=1732584193;var n=-271733879;var o=-1732584194;var p=271733878;for(k=0;k<l;k+=16){c=m;h=n;i=o;j=p;m=d(m,n,o,p,b[k+0],7,-680876936);p=d(p,m,n,o,b[k+1],12,-389564586);o=d(o,p,m,n,b[k+2],17,606105819);n=d(n,o,p,m,b[k+3],22,-1044525330);m=d(m,n,o,p,b[k+4],7,-176418897);p=d(p,m,n,o,b[k+5],12,1200080426);o=d(o,p,m,n,b[k+6],17,-1473231341);n=d(n,o,p,m,b[k+7],22,-45705983);m=d(m,n,o,p,b[k+8],7,1770035416);p=d(p,m,n,o,b[k+9],12,-1958414417);o=d(o,p,m,n,b[k+10],17,-42063);n=d(n,o,p,m,b[k+11],22,-1990404162);m=d(m,n,o,p,b[k+12],7,1804603682);p=d(p,m,n,o,b[k+13],12,-40341101);o=d(o,p,m,n,b[k+14],17,-1502002290);n=d(n,o,p,m,b[k+15],22,1236535329);m=e(m,n,o,p,b[k+1],5,-165796510);p=e(p,m,n,o,b[k+6],9,-1069501632);o=e(o,p,m,n,b[k+11],14,643717713);n=e(n,o,p,m,b[k+0],20,-373897302);m=e(m,n,o,p,b[k+5],5,-701558691);p=e(p,m,n,o,b[k+10],9,38016083);o=e(o,p,m,n,b[k+15],14,-660478335);n=e(n,o,p,m,b[k+4],20,-405537848);m=e(m,n,o,p,b[k+9],5,568446438);p=e(p,m,n,o,b[k+14],9,-1019803690);o=e(o,p,m,n,b[k+3],14,-187363961);n=e(n,o,p,m,b[k+8],20,1163531501);m=e(m,n,o,p,b[k+13],5,-1444681467);p=e(p,m,n,o,b[k+2],9,-51403784);o=e(o,p,m,n,b[k+7],14,1735328473);n=e(n,o,p,m,b[k+12],20,-1926607734);m=f(m,n,o,p,b[k+5],4,-378558);p=f(p,m,n,o,b[k+8],11,-2022574463);o=f(o,p,m,n,b[k+11],16,1839030562);n=f(n,o,p,m,b[k+14],23,-35309556);m=f(m,n,o,p,b[k+1],4,-1530992060);p=f(p,m,n,o,b[k+4],11,1272893353);o=f(o,p,m,n,b[k+7],16,-155497632);n=f(n,o,p,m,b[k+10],23,-1094730640);m=f(m,n,o,p,b[k+13],4,681279174);p=f(p,m,n,o,b[k+0],11,-358537222);o=f(o,p,m,n,b[k+3],16,-722521979);n=f(n,o,p,m,b[k+6],23,76029189);m=f(m,n,o,p,b[k+9],4,-640364487);p=f(p,m,n,o,b[k+12],11,-421815835);o=f(o,p,m,n,b[k+15],16,530742520);n=f(n,o,p,m,b[k+2],23,-995338651);m=g(m,n,o,p,b[k+0],6,-198630844);p=g(p,m,n,o,b[k+7],10,1126891415);o=g(o,p,m,n,b[k+14],15,-1416354905);n=g(n,o,p,m,b[k+5],21,-57434055);m=g(m,n,o,p,b[k+12],6,1700485571);p=g(p,m,n,o,b[k+3],10,-1894986606);o=g(o,p,m,n,b[k+10],15,-1051523);n=g(n,o,p,m,b[k+1],21,-2054922799);m=g(m,n,o,p,b[k+8],6,1873313359);p=g(p,m,n,o,b[k+15],10,-30611744);o=g(o,p,m,n,b[k+6],15,-1560198380);n=g(n,o,p,m,b[k+13],21,1309151649);m=g(m,n,o,p,b[k+4],6,-145523070);p=g(p,m,n,o,b[k+11],10,-1120210379);o=g(o,p,m,n,b[k+2],15,718787259);n=g(n,o,p,m,b[k+9],21,-343485551);m=a(m,c);n=a(n,h);o=a(o,i);p=a(p,j)}return[m,n,o,p]};var i=function(a){var b="0123456789abcdef",c="",d,e=a.length*4;for(d=0;d<e;d++){c+=b.charAt(a[d>>2]>>d%4*8+4&15)+b.charAt(a[d>>2]>>d%4*8&15)}return c};var j=function(a){var b=(a.length+8>>6)+1;var c=[],d,e=b*16,f,g=a.length;for(d=0;d<e;d++){c.push(0)}for(f=0;f<g;f++){c[f>>2]|=(a.charCodeAt(f)&255)<<f%4*8}c[f>>2]|=128<<f%4*8;c[b*16-2]=g*8;return c};return i(h(j(this)))};
