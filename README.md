@@ -54,7 +54,6 @@ $(".oembed").oembed(null,{
 });
 ````
 
-
 Fallback to Open Graph 
 ------------
 If no providers are found, the fallback (opengraph) provider will scrap the intended website using YQL
@@ -145,8 +144,24 @@ Current 3rd party sources include:
 * wistia - Oembed
   http://home.wistia.com/m/NI3bSQ
 * Vine - template regex
-
-  
+* Boxoffice Buz - template regex
+  http://boxofficebuz.com
+* ClipSyndicate - template regex
+  http://clipsyndicate.com/
+* Coub - template regex
+  http://coub.com/
+* Discoverychannel - template regex
+  http://discovery.com/
+* Minilogs - template regex
+  http://minilogs.com/
+* Telly - template regex
+  http://telly.com/
+* Viddy - template regex
+  http://viddy.com/
+* Worldstarhiphop - template regex
+  http://worldstarhiphop.com/
+* Zapiks - template regex
+  http://www.zapiks.fr/
   
 ####Audio 
 
@@ -167,7 +182,8 @@ Current 3rd party sources include:
   http://audioboo.fm/boos/710079-geofencing-and-the-future
 * Spotify - Oembed
   http://open.spotify.com/album/1YwzJz7CrV9fd9Qeb6oo1d
- 
+* Chirbit - template regex
+  http://www.chirbit.com/
 
 #### Photo
 
@@ -223,6 +239,12 @@ Current 3rd party sources include:
   http://twitrpix.com/l39c
 * chictopia - OGP
   http://www.chictopia.com/photo/show/641423-homeless-black-leather-vintage-shorts-beige-forever-21-jacket
+* Achewood - template regex
+  http://achewood.com/
+* Fotokritik - template regex
+  http://fotokritik.com/
+* Giflike - template regex
+  http://giflike.com
 
 ####Rich
 
@@ -326,7 +348,27 @@ Current 3rd party sources include:
   https://sketchfab.com/show/9lVs96AuFUAjKjwvsMG0Uf7Yy7b
 * polldaddy - template regex
 * coveritlive - template regex
-  
+* 360io - template regex
+  http://360.io/
+* Bubbli  - template regex
+  http://bubb.li/
+* Cloudup  - template regex
+  http://cloudup.com/
+* Codepen  - template regex
+  http://codepen.io/
+* Googleviews - template regex
+  https://www.google.com/maps/
+* Google Maps - template regex
+  https://www.google.com/maps/place/
+* Imajize - template regex
+  http://imajize.com/
+* Mapjam - template regex
+  http://mapjam.com/
+* Polar - template regex
+  http://polarb.com/
+* Ponga - template regex
+  http://ponga.com/
+
 ---
 
 ####TODO:
@@ -344,6 +386,5 @@ Current 3rd party sources include:
 * TwitLonger
 * http://robohash.org/
 * http://infogr.am/british-council/burma/
-
 
 Plus a lot more :) Feel free to submit
