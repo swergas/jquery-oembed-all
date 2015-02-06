@@ -123,6 +123,7 @@
         maxWidth: null,
         maxHeight: null,
         includeHandle: true,
+        initiallyVisible: true,
         embedMethod: 'auto',
         // "auto", "append", "fill"
         onProviderNotFound: function () {
@@ -373,7 +374,12 @@
                 }
                 oembedContainer.append('<br/>');
                 try {
-                    oembedData.code.clone().appendTo(oembedContainer);
+                    var code = oembedData.code.clone();
+                    if ( !settings.initiallyVisible ) {
+                        code.hide();
+                    }
+                    
+                    code.appendTo(oembedContainer);
                 } catch (e) {
                     oembedContainer.append(oembedData.code);
                 }

@@ -47,6 +47,7 @@ to use...
 
 ````
 $(".oembed").oembed(null,{
+    // initiallyVisible: false, // default is true
     embedMethod: 'auto',	// "auto", "append", "fill"	
     apikeys: {
       amazon : '<your amazon key>',
